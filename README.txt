@@ -8,22 +8,37 @@ Small script/plugin to run a DRb/IRB server inside of your
 (Rails/Merb/whatever) application, so you can poke around in it while
 it's running.
 
+Original code from Charles Lowe [ruby-talk:250220], I just wrapped
+up into a nice package, because I think this is a cool development and
+debugging tool.
+
+[ruby-talk:250220]: http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-talk/250220
+
 == REQUIREMENTS:
 
-* DRb, IRB
+* DRb, IRB (i.e., nothing above the standard library)
 
 == SYNOPSIS:
 
-  # start the server
-  load 'drbirb/loader.rb'
+Start the server:
+
+  require 'drbirb/loader'
 
   # join the thread unless you have some other code that prevents the
   # interpreter from exiting
   Drbirb.server.thread.join
 
+Start the client:
+
+  ruby -S drbirbc
+
+When intalled as a Rails plugin, the server is started automatically
+for you in the plugin's init.rb.
+
 == INSTALL:
 
-* script/plugin install http://github.com/nicksieger/drbirb.git
+  gem install drbirb
+  script/plugin install http://github.com/nicksieger/drbirb.git
 
 == LICENSE:
 

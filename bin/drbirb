@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 load 'drbirb/loader.rb'
-Drbirb.server.thread.join
 trap("INT") do
   exit
 end
+Drbirb.server.thread.join
