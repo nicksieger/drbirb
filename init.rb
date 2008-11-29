@@ -1,1 +1,1 @@
-load 'drbirb/loader.rb'
+require 'drbirb/loader'
