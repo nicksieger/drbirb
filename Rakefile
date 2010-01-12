@@ -4,8 +4,7 @@ require 'rubygems'
 require 'hoe'
 require './lib/drbirb/version.rb'
 
-Hoe.new('drbirb', Drbirb::VERSION) do |p|
+Hoe.spec('drbirb') do |p|
+  p.version = Drbirb::VERSION
   p.developer('Nick Sieger', 'nick@nicksieger.com')
 end
-
-# vim: syntax=Ruby
