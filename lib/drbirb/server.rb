@@ -47,6 +47,7 @@ module IRB
       # i was getting e2mmap redefinition warnings,
       # so moved this out of start_with_io
       IRB.setup nil
+      IRB.conf[:PROMPT_MODE] = :DEFAULT
     end
 
     def irb_start input_proc=nil, output_proc=nil
