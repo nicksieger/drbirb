@@ -4,9 +4,8 @@
 
 == DESCRIPTION:
 
-Small script/plugin to run a DRb/IRB server inside of your
-(Rails/Merb/whatever) application, so you can poke around in it while
-it's running.
+Small script/plugin to run a DRb/IRB server inside of your Ruby
+application, so you can poke around while it's running.
 
 Original code from Charles Lowe [ruby-talk:250220], I just wrapped
 up into a nice package, because I think this is a cool development and
@@ -44,7 +43,7 @@ for you in the plugin's init.rb.
 
 (The MIT License)
 
-Copyright (c) 2008 Nick Sieger
+Copyright (c) 2008-2010 Nick Sieger
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
