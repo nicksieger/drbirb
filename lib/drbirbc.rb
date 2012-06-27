@@ -19,10 +19,11 @@ module IRB
   end
 
   def IRB.remote_url
-    uri = ENV['IRB_URL'] || ARGV[0]
-    unless uri =~ /^druby:/
+    uri = ARGV[0] || ENV['IRB_URL']
+    unless uri =~ /^dr(uby|b[a-z0-9]+):/
       uri = "druby://127.0.0.1:7777"
     end
+    uri
   end
 end
 
