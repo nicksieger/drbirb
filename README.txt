@@ -19,7 +19,7 @@ debugging tool.
 
 == SYNOPSIS:
 
-Start the server:
+Start the server on localhost:7777:
 
   require 'drbirb/loader'
 
@@ -27,9 +27,20 @@ Start the server:
   # interpreter from exiting
   Drbirb.server.thread.join
 
+Start the server on a custom host/port:
+
+  require 'drbirb/server'
+  irb_host, irb_port = ...
+  server = DRb.start_service "druby://#{irb_host}:#{irb_port}", IRB::RemoteService.new
+
+  # join the thread unless you have some other code that prevents the
+  # interpreter from exiting
+  server.thread.join
+
 Start the client:
 
-  ruby -S drbirbc
+  drbirbc
+  drbirbc druby://localhost:7777
 
 When intalled as a Rails plugin, the server is started automatically
 for you in the plugin's init.rb.
@@ -37,13 +48,16 @@ for you in the plugin's init.rb.
 == INSTALL:
 
   gem install drbirb
+
+To use in a Rails app (legacy/plugin):
+
   script/plugin install http://github.com/nicksieger/drbirb.git
 
 == LICENSE:
 
 (The MIT License)
 
-Copyright (c) 2008-2010 Nick Sieger
+Copyright (c) 2008-2012 Nick Sieger
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
